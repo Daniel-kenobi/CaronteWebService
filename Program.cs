@@ -1,16 +1,20 @@
 using Barsa.Models.JWTAppSettingsModel;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Tartaro;
+using MediatR;
+using Tartaro.Configurations;
 
-internal class Program
+internal partial class Program
 {
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        ConfigureAuthentication.AddJWTAuthentication(builder).AddControllersWithViews();
+        Authentication.AddJWTAuthentication(builder);
+        AppSettings.BindAppSettingsToModel(builder);
+        ConnectionString.BindConnectionStringToModel(builder);
+        Database.ConfigureDbContext(builder);
+
+        builder.Services.AddMediatR(typeof(Program));
+        builder.Services.AddControllersWithViews();
 
         var app = builder.Build();
 

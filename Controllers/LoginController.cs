@@ -21,7 +21,6 @@ namespace Tartaro.Controllers
             var response = await _mediator.Send(new LoginQuery() { Client = clientUserModel });
 
 
-
             return Ok();
         }
     }
