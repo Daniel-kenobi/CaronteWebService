@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ClientModule } from './Client/Client.module.';
-import { ClientComponent } from './Client/Client.component';
+import { UserModule } from './User/User.module.';
+import { UserComponent } from './User/User.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientComponent
+    UserComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    ClientModule
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

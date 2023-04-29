@@ -15,12 +15,18 @@ internal partial class Program
 
         builder.Services.AddMediatR(typeof(Program));
         builder.Services.AddControllersWithViews();
+        builder.Services.AddAutoMapper(typeof(Program));
+        builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+        {
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        }));
 
         var app = builder.Build();
 
         if (!app.Environment.IsDevelopment())
             app.UseHsts();
 
+        app.UseCors("MyPolicy");
         app.UseHttpsRedirection();
         app.UseAuthentication();
         app.UseStaticFiles();

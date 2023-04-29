@@ -23,7 +23,7 @@ public partial class ApplicationDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql(_connectionString.ToString(), ServerVersion.Parse("8.0.32-mysql"));
+        => optionsBuilder.UseMySql(_connectionString.Value.ToString(), ServerVersion.Parse("8.0.32-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -42,7 +42,7 @@ public partial class ApplicationDbContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("datetime");
             entity.Property(e => e.Username).HasMaxLength(255);
-            entity.Property(e => e.WindowsVersion).HasMaxLength(255);
+            entity.Property(e => e.OSVersion).HasMaxLength(255);
         });
 
         OnModelCreatingPartial(modelBuilder);

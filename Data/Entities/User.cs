@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Tartaro.Data.Entities;
+﻿namespace Tartaro.Data.Entities;
 
 public partial class User
 {
@@ -9,7 +6,7 @@ public partial class User
 
     public string Username { get; set; } = null!;
 
-    public string? WindowsVersion { get; set; }
+    public string? OSVersion { get; set; }
 
     public DateTime? LastActivicty { get; set; }
 }

@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Tartaro.Configurations;
 using Tartaro.Data;
-using Tartaro.Data.Entities;
 
 namespace Tartaro.Application.Mediators.Login
 {
@@ -47,7 +46,7 @@ namespace Tartaro.Application.Mediators.Login
 
         private async Task<bool> UserExists(ClientUserModel user)
         {
-            return (await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.WindowsVersion == user.OSVersion) is not null);
+            return (await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.OSVersion == user.OSVersion) is not null);
         }
 
         private async Task CreateUser(ClientUserModel user)
@@ -56,9 +55,9 @@ namespace Tartaro.Application.Mediators.Login
             await _dbContext.Users.AddAsync(userEntity);
         }
 
-        private User MapUserModelToEntity(ClientUserModel user)
+        private Data.Entities.User MapUserModelToEntity(ClientUserModel user)
         {
-            return _mapper.Map<User>(user);
+            return _mapper.Map<Data.Entities.User>(user);
         }
     }
 }
