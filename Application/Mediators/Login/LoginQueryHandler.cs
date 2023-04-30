@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Barsa.CommomResponses;
-using Barsa.Models.CreateClientUser;
+using Barsa.Models.User;
 using Barsa.Models.JWTAppSettingsModel;
+using Barsa.Models.User;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -36,7 +37,7 @@ namespace Tartaro.Application.Mediators.Login
             return response;
         }
 
-        private async Task<string> HandleUser(ClientUserModel user)
+        private async Task<string> HandleUser(Barsa.Models.User.UserModel user)
         {
             if (!await UserExists(user))
                 await CreateUser(user);
@@ -44,18 +45,18 @@ namespace Tartaro.Application.Mediators.Login
             return GenerateToken(user);
         }
 
-        private async Task<bool> UserExists(ClientUserModel user)
+        private async Task<bool> UserExists(UserModel user)
         {
             return (await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.OSVersion == user.OSVersion) is not null);
         }
 
-        private async Task CreateUser(ClientUserModel user)
+        private async Task CreateUser(UserModel user)
         {
             var userEntity = MapUserModelToEntity(user);
             await _dbContext.Users.AddAsync(userEntity);
         }
 
-        private Data.Entities.User MapUserModelToEntity(ClientUserModel user)
+        private Data.Entities.User MapUserModelToEntity(UserModel user)
         {
             return _mapper.Map<Data.Entities.User>(user);
         }

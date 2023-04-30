@@ -1,4 +1,4 @@
-﻿using Barsa.Models.CreateClientUser;
+﻿using Barsa.Models.User;
 using Barsa.Models.JWTAppSettingsModel;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -17,7 +17,7 @@ namespace Tartaro.Configurations
             _jwtModel = jwtModel;
         }
 
-        public string GenerateToken(ClientUserModel user)
+        public string GenerateToken(UserModel user)
         {
             var issuer = _jwtModel.Value.Issuer;
             var audience = _jwtModel.Value.Audience;
@@ -34,7 +34,7 @@ namespace Tartaro.Configurations
             return stringToken;
         }
 
-        private List<Claim> GenerateUserClaims(ClientUserModel user)
+        private List<Claim> GenerateUserClaims(UserModel user)
         {
             return new List<Claim>()
             {

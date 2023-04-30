@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Barsa.Models.CreateClientUser;
+using Barsa.Models.User;
 
 namespace Tartaro.Configurations
 {
@@ -7,8 +7,8 @@ namespace Tartaro.Configurations
     {
         public MapProfile()
         {
-            CreateMap<ClientUserModel, Data.Entities.User>();
-            CreateMap<Data.Entities.User, ClientUserModel>();
+            CreateMap<UserModel, Data.Entities.User>();
+            CreateMap<Data.Entities.User, UserModel>();
         }
     }
 }

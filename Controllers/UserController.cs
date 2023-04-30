@@ -1,4 +1,4 @@
-﻿using Barsa.Models.CreateClientUser;
+﻿using Barsa.Models.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tartaro.Application.Mediators.Login;
@@ -17,7 +17,7 @@ namespace Tartaro.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] ClientUserModel clientUserModel)
+        public async Task<IActionResult> Login([FromBody] UserModel clientUserModel)
         {
             var response = await _mediator.Send(new LoginQuery() { Client = clientUserModel });
 
