@@ -41,8 +41,8 @@
 
   <ItemGroup>
     <Folder Include="Application\Models\" />
+    <Folder Include="ClientApp\src\app\Models\NavbarLinks\" />
     <Folder Include="ClientApp\src\app\Models\User\" />
-    <Folder Include="ClientApp\src\assets\" />
     <Folder Include="Data\Entities\" />
   </ItemGroup>
 

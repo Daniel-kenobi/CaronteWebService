@@ -1,3 +1,21 @@
 table {
   width: 100%;
 }
+
+.bg-cream {
+  background-color: rgb(235, 235, 235);
+}
+
+.bg-table-blue {
+    color: white;
+    background-color: rgb(92, 133, 219);
+}
+
+.tb-border {
+  border: 2px solid rgb(245, 245, 245);
+}
+
+.table-row:hover {
+    transition-duration: 0.3s;
+    background-color: #FFFFFF;
+}

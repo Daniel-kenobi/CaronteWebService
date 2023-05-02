@@ -5,10 +5,10 @@ import { UserService } from "./User.service";
 
 @NgModule({
   imports: [
-    MatTableModule
+    MatTableModule,
   ],
   exports: [
-    MatTableModule
+    MatTableModule,
   ],
   providers: [
     UserService

@@ -2,8 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
-import { BackendUrl } from "../backendurl.service";
 import { UserModel } from "../Models/User/User.model";
+import { BackendUrl } from "../Services/backendurl.service";
 
 @Injectable()
 export class UserService {
