@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
 
 import { UserModel } from "../Models/User/User.model";
+import { UserDetailComponent } from "./Detail/UserDetail.component";
 import { UserService } from "./User.service";
 
 
@@ -15,7 +17,7 @@ export class UserComponent implements OnInit {
   users: UserModel[] = [];
   clickedRow: UserModel | null = null;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -29,6 +31,8 @@ export class UserComponent implements OnInit {
   }
 
   GetDetails(clickedRow: UserModel): void {
-    this.clickedRow = clickedRow;
+    const dialogRef = this.dialog.open(UserDetailComponent, {
+      data: clickedRow,
+    });
   }
 }

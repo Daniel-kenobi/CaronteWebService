@@ -1,0 +1,9 @@
+@import 'https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css';
+
+.details {
+  background-color: rgb(235, 235, 235);
+  width: 700px;
+  height: 500px;
+  border: 2px solid white;
+  border-radius: 40px;
+}
