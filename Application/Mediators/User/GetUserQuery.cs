@@ -1,4 +1,4 @@
-﻿using Barsa.CommomResponses;
+﻿using Barsa.Commoms;
 using Barsa.Interfaces;
 using MediatR;
 

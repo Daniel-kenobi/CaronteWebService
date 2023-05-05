@@ -1,5 +1,5 @@
 ﻿using Barsa.Abstracts;
-using Barsa.CommomResponses;
+using Barsa.Commoms;
 using Barsa.Models.Enums;
 using Barsa.Models.Errors;
 using MediatR;

@@ -1,5 +1,5 @@
 ﻿using Barsa.Models.User;
-using Barsa.CommomResponses;
+using Barsa.Commoms;
 using MediatR;
 
 namespace Tartaro.Application.Mediators.Login

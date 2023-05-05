@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Barsa.CommomResponses;
+using Barsa.Commoms;
 using Barsa.Models.User;
 using Barsa.Models.JWTAppSettingsModel;
 using Barsa.Models.User;
