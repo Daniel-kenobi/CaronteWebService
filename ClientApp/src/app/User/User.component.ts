@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
 
+import { MatDialog } from "@angular/material/dialog";
 import { UserModel } from "../Models/User/User.model";
 import { UserDetailComponent } from "./Detail/UserDetail.component";
 import { UserService } from "./User.service";
-
 
 @Component({
   selector: 'user',
@@ -13,11 +12,10 @@ import { UserService } from "./User.service";
 })
 export class UserComponent implements OnInit {
   displayedColumns: string[] = ['userId', 'username', 'oSVersion', 'lastActivicty'];
-
   users: UserModel[] = [];
-  clickedRow: UserModel | null = null;
-
+   
   constructor(private userService: UserService, public dialog: MatDialog) {
+
   }
 
   ngOnInit() {

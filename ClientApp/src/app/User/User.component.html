@@ -1,4 +1,5 @@
-<table mat-table [dataSource]="users" class="bg-cream">
+<mat-spinner *ngIf="users.length == 0"></mat-spinner>
+<table mat-table [dataSource]="users" class="bg-cream" *ngIf="users.length > 0">
   <ng-container matColumnDef="userId">
     <th mat-header-cell *matHeaderCellDef> ID </th>
     <td mat-cell *matCellDef="let element font-weight-bold"> {{element.userId}} </td>
@@ -18,9 +19,3 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-table-blue"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="GetDetails(row)" class="table-row tb-border"></tr>
 </table>
-<!--<ng-template [ngIf]="clickedRow != null" class="container">
-  <h2 class="text-white text-center">{{clickedRow.userId}} - {{clickedRow.username}} commands</h2>
-  <input type="text" [(ngModel)]="commands"/>
-
-  <button class="btn-primary" (click)="SendCommand(clickedRow)">Send</button>
-</ng-template>-->

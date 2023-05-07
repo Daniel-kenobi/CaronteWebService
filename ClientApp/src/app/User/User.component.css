@@ -2,13 +2,17 @@ table {
   width: 100%;
 }
 
+.mat-spinner {
+  margin: 0 auto;
+}
+
 .bg-cream {
   background-color: rgb(235, 235, 235);
 }
 
 .bg-table-blue {
-    color: white;
-    background-color: rgb(92, 133, 219);
+  color: white;
+  background-color: rgb(92, 133, 219);
 }
 
 .tb-border {
@@ -16,6 +20,6 @@ table {
 }
 
 .table-row:hover {
-    transition-duration: 0.3s;
-    background-color: #FFFFFF;
+  transition-duration: 0.3s;
+  background-color: #FFFFFF;
 }

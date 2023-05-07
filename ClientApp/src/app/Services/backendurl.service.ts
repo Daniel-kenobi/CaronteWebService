@@ -14,4 +14,9 @@ export class BackendUrl {
   {
     return `${this.baseUrl}user/GetUsers`;
   }
+
+  SendCommand(): string
+  {
+    return `${this.baseUrl}user/SendCommand`;
+  }
 }
