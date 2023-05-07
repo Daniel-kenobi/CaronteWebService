@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Tartaro.Application.Mediators.Login
 {
-    public class LoginQuery : IRequest<CommomMediatorResponse<string>>
+    public class LoginQuery : IRequest<CommomResponse<string>>
     {
         public UserModel Client { get; set; }
     }

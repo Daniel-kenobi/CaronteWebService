@@ -4,7 +4,6 @@ import { UserModel } from "../../Models/User/User.model";
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommandType, CommandTypeString } from "../../Models/Enum/commandType.enum";
 import { UserCommand } from "../../Models/User/UserCommand.model";
-import { FormControl } from "@angular/forms";
 
 @Component({
   selector: 'UserDetail',
@@ -25,6 +24,10 @@ export class UserDetailComponent implements OnInit {
 
   parameterChanged(event: Event): void {
     this.userCommand.parameter = (event.target as HTMLTextAreaElement).value;
+  }
+
+  onSelected(value: HTMLSelectElement): void {
+    this.userCommand.command = value.selectedIndex;
   }
 
   SendCommand(): void {

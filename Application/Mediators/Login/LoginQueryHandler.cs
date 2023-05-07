@@ -11,7 +11,7 @@ using Tartaro.Data;
 
 namespace Tartaro.Application.Mediators.Login
 {
-    public class LoginQueryHandler : HandleJWT, IRequestHandler<LoginQuery, CommomMediatorResponse<string>>
+    public class LoginQueryHandler : HandleJWT, IRequestHandler<LoginQuery, CommomResponse<string>>
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
@@ -21,9 +21,9 @@ namespace Tartaro.Application.Mediators.Login
             _mapper = mapper;
         }
 
-        public async Task<CommomMediatorResponse<string>> Handle(LoginQuery request, CancellationToken cancellationToken)
+        public async Task<CommomResponse<string>> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
-            var response = new CommomMediatorResponse<string>();
+            var response = new CommomResponse<string>();
 
             try
             {

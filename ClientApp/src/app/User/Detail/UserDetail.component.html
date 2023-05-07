@@ -24,18 +24,18 @@
     <form class="p-4 m-3 border border-dark form-group">
       <div class="row d-flex mb-3">
         <label for="CommandType">Command type:</label>
-        <select id="CommandType" class="form-select" aria-label="Default select example">
+        <select id="CommandType" class="form-select" aria-label="Default select example"  (change)="onSelected(commandTypesSelect)" #commandTypesSelect>
           <option selected>None</option>
-          <option *ngFor="let commandType of commandTypes" value="{{commandType}}">{{commandType}}</option>
+          <option *ngFor="let commandType of commandTypes" [value]="commandType">{{commandType}}</option>
         </select>
       </div>
       <div class="row d-flex">
         <label for="parameters">Parameters:</label>
-        <textarea class="form-control" id="parameter" rows="5" placeholder="parameter..." (input)="parameterChanged($event)"></textarea>
+        <textarea class="form-control" id="parameter" rows="5" placeholder="parameter1;parameter2;parameter3;" (input)="parameterChanged($event)"></textarea>
       </div>
     </form>
     <div class="col-md-12 text-center">
-      <button class="btn btn-primary mx-auto" (click)="SendCommand()">Send commands</button>
+      <button class="btn btn-primary" (click)="SendCommand()">Send commands</button>
     </div>
   </div>
 </div>
