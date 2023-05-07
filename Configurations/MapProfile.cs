@@ -7,8 +7,8 @@ namespace Tartaro.Configurations
     {
         public MapProfile()
         {
-            CreateMap<UserModel, Data.Entities.User>();
-            CreateMap<Data.Entities.User, UserModel>();
+            CreateMap<UserLoginModel, Data.Entities.User>();
+            CreateMap<Data.Entities.User, UserLoginModel>();
         }
     }
 }

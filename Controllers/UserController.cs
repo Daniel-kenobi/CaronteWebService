@@ -18,7 +18,7 @@ namespace Tartaro.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] UserModel clientUserModel)
+        public async Task<IActionResult> Login([FromBody] UserLoginModel clientUserModel)
         {
             var response = await _mediator.Send(new LoginQuery() { Client = clientUserModel });
 

@@ -6,6 +6,6 @@ namespace Tartaro.Application.Mediators.Login
 {
     public class LoginQuery : IRequest<CommomResponse<string>>
     {
-        public UserModel Client { get; set; }
+        public UserLoginModel Client { get; set; }
     }
 }

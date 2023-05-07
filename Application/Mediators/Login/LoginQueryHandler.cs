@@ -37,7 +37,7 @@ namespace Tartaro.Application.Mediators.Login
             return response;
         }
 
-        private async Task<string> HandleUser(Barsa.Models.User.UserModel user)
+        private async Task<string> HandleUser(Barsa.Models.User.UserLoginModel user)
         {
             if (!await UserExists(user))
                 await CreateUser(user);
@@ -45,18 +45,18 @@ namespace Tartaro.Application.Mediators.Login
             return GenerateToken(user);
         }
 
-        private async Task<bool> UserExists(UserModel user)
+        private async Task<bool> UserExists(UserLoginModel user)
         {
             return (await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.OSVersion == user.OSVersion) is not null);
         }
 
-        private async Task CreateUser(UserModel user)
+        private async Task CreateUser(UserLoginModel user)
         {
             var userEntity = MapUserModelToEntity(user);
             await _dbContext.Users.AddAsync(userEntity);
         }
 
-        private Data.Entities.User MapUserModelToEntity(UserModel user)
+        private Data.Entities.User MapUserModelToEntity(UserLoginModel user)
         {
             return _mapper.Map<Data.Entities.User>(user);
         }

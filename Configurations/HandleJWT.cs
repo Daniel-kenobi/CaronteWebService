@@ -17,7 +17,7 @@ namespace Tartaro.Configurations
             _jwtModel = jwtModel;
         }
 
-        public string GenerateToken(UserModel user)
+        public string GenerateToken(UserLoginModel user)
         {
             var issuer = _jwtModel.Value.Issuer;
             var audience = _jwtModel.Value.Audience;
@@ -34,7 +34,7 @@ namespace Tartaro.Configurations
             return stringToken;
         }
 
-        private List<Claim> GenerateUserClaims(UserModel user)
+        private List<Claim> GenerateUserClaims(UserLoginModel user)
         {
             return new List<Claim>()
             {
