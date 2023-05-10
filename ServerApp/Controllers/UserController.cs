@@ -1,9 +1,8 @@
 ﻿using Barsa.Models.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Tartaro.Application.Mediators.Login;
-using Tartaro.Application.Mediators.User.GetUser;
-using Tartaro.Application.Mediators.User.PublishCommand;
+using Tartaro.ServerApp.Application.Mediators.User.GetUser;
+using Tartaro.ServerApp.Application.Mediators.User.Login;
 
 namespace Tartaro.Controllers
 {
@@ -39,15 +38,6 @@ namespace Tartaro.Controllers
             return BadRequest(response.Errors);
         }
 
-        [HttpPost("SendCommand")]
-        public async Task<IActionResult> SendCommand([FromBody] UserCommand userCommand)
-        {
-            var response = await _mediator.Send(new PublishUserCommand() { UserCommand = userCommand });
-
-            if (response.IsSucessFull)
-                return NoContent();
-
-            return BadRequest(response.Errors);
-        }
+        
     }
 }

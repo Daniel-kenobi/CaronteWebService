@@ -2,7 +2,7 @@
 using Barsa.Commoms;
 using MediatR;
 
-namespace Tartaro.Application.Mediators.Login
+namespace Tartaro.ServerApp.Application.Mediators.User.Login
 {
     public class LoginQuery : IRequest<CommomResponse<string>>
     {

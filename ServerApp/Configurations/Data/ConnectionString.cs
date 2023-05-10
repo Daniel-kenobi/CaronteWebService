@@ -1,4 +1,4 @@
-﻿namespace Tartaro.Configurations
+﻿namespace Tartaro.Configurations.Data
 {
     public static class ConnectionString
     {

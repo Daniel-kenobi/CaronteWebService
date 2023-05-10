@@ -40,11 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Models\" />
+    <Folder Include="ServerApp\Application\Models\" />
     <Folder Include="ClientApp\src\app\Models\NavbarLinks\" />
     <Folder Include="ClientApp\src\app\Models\Enum\" />
     <Folder Include="ClientApp\src\app\Models\User\" />
-    <Folder Include="Data\Entities\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

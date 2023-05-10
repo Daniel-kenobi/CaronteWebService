@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Tartaro.Configurations
+namespace Tartaro.Configurations.Authentication
 {
     public static class Authentication
     {

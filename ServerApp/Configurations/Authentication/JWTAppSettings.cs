@@ -1,6 +1,6 @@
 ﻿using Barsa.Models.JWTAppSettingsModel;
 
-namespace Tartaro.Configurations
+namespace Tartaro.Configurations.Authentication
 {
     public static class AppSettings
     {

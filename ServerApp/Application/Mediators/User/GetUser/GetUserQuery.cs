@@ -2,7 +2,7 @@
 using Barsa.Interfaces;
 using MediatR;
 
-namespace Tartaro.Application.Mediators.User.GetUser
+namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
 {
     public class GetUserQuery : IRequest<CommomResponse<List<Data.Entities.User>>>, IPaginatedRequest
     {

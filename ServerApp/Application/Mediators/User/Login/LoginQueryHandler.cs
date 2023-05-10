@@ -6,10 +6,10 @@ using Barsa.Models.User;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Tartaro.Configurations;
 using Tartaro.Data;
+using Tartaro.Configurations.Authentication;
 
-namespace Tartaro.Application.Mediators.Login
+namespace Tartaro.ServerApp.Application.Mediators.User.Login
 {
     public class LoginQueryHandler : HandleJWT, IRequestHandler<LoginQuery, CommomResponse<string>>
     {
@@ -37,7 +37,7 @@ namespace Tartaro.Application.Mediators.Login
             return response;
         }
 
-        private async Task<string> HandleUser(Barsa.Models.User.UserLoginModel user)
+        private async Task<string> HandleUser(UserLoginModel user)
         {
             if (!await UserExists(user))
                 await CreateUser(user);
@@ -47,7 +47,7 @@ namespace Tartaro.Application.Mediators.Login
 
         private async Task<bool> UserExists(UserLoginModel user)
         {
-            return (await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.OSVersion == user.OSVersion) is not null);
+            return await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.OSVersion == user.OSVersion) is not null;
         }
 
         private async Task CreateUser(UserLoginModel user)

@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using Tartaro.Data.Entities;
 
-namespace Tartaro.Configurations
+namespace Tartaro.Configurations.Authentication
 {
     public abstract class HandleJWT
     {

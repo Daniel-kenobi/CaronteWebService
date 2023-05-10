@@ -1,6 +1,6 @@
 ﻿using Tartaro.Data;
 
-namespace Tartaro.Configurations
+namespace Tartaro.Configurations.Data
 {
     public static class Database
     {

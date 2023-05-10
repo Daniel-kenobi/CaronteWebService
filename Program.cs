@@ -1,6 +1,6 @@
-using Barsa.Models.JWTAppSettingsModel;
 using MediatR;
-using Tartaro.Configurations;
+using Tartaro.Configurations.Authentication;
+using Tartaro.Configurations.Data;
 
 internal partial class Program
 {

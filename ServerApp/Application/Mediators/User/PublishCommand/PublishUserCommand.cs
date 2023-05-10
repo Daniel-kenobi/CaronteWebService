@@ -2,7 +2,7 @@
 using Barsa.Models.User;
 using MediatR;
 
-namespace Tartaro.Application.Mediators.User.PublishCommand
+namespace Tartaro.ServerApp.Application.Mediators.User.PublishCommand
 {
     public class PublishUserCommand : IRequest<CommomResponse>
     {

@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Tartaro.Data;
 
-namespace Tartaro.Application.Mediators.User.GetUser
+namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
 {
     public class GetUserQueryHandler : Pagination<Data.Entities.User>, IRequestHandler<GetUserQuery, CommomResponse<List<Data.Entities.User>>>
     {
