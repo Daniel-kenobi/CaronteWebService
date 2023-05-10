@@ -2,11 +2,14 @@
 using Barsa.Models.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Tartaro.ServerApp.Application.Mediators.Client.GetUser;
 using Tartaro.ServerApp.Application.Mediators.Client.Validate;
 using Tartaro.ServerApp.Application.Mediators.User.PublishCommand;
 
 namespace Tartaro.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class ClientController : Controller
     {
         private readonly IMediator _mediator;
@@ -34,6 +37,17 @@ namespace Tartaro.Controllers
 
             if (response.IsSucessFull)
                 return NoContent();
+
+            return BadRequest(response.Errors);
+        }
+
+        [HttpPost("GetClient")]
+        public async Task<IActionResult> GetClient([FromBody] GetClientQuery getClientQuery)
+        {
+            var response = await _mediator.Send(getClientQuery);
+
+            if (response.IsSucessFull)
+                return Ok(response.ResponseObject);
 
             return BadRequest(response.Errors);
         }

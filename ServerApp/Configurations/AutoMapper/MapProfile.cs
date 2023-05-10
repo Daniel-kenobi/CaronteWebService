@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using Barsa.Models.ClientInformation;
 using Barsa.Models.User;
-using Tartaro.Data.Entities;
+using Tartaro.ServerApp.Data.Entities;
 
 namespace Tartaro.Configurations.AutoMapper
 {
@@ -10,6 +11,9 @@ namespace Tartaro.Configurations.AutoMapper
         {
             CreateMap<UserLoginModel, User>();
             CreateMap<User, UserLoginModel>();
+
+            CreateMap<ClientModel, Client>();
+            CreateMap<Client, ClientModel>();
         }
     }
 }

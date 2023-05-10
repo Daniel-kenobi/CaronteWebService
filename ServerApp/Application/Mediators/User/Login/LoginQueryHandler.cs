@@ -47,7 +47,7 @@ namespace Tartaro.ServerApp.Application.Mediators.User.Login
 
         private async Task<bool> UserExists(UserLoginModel user)
         {
-            return await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username && x.OSVersion == user.OSVersion) is not null;
+            return await _dbContext.Users.FirstOrDefaultAsync(x => x.Username == user.Username) is not null;
         }
 
         private async Task CreateUser(UserLoginModel user)

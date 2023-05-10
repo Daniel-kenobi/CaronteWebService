@@ -1,0 +1,35 @@
+<h2 class="text-center text-white">Clients - PC's that infected with caronte client</h2>
+
+<mat-spinner *ngIf="clients.length == 0"></mat-spinner>
+<table mat-table [dataSource]="clients" class="bg-cream" *ngIf="clients.length > 0">
+  <ng-container matColumnDef="clientId">
+    <th mat-header-cell *matHeaderCellDef> Client ID </th>
+    <td mat-cell *matCellDef="let element font-weight-bold"> {{element.clientId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="clientName">
+    <th mat-header-cell *matHeaderCellDef> Client Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.clientName}} </td>
+  </ng-container>
+  <ng-container matColumnDef="localIp">
+    <th mat-header-cell *matHeaderCellDef> Local IP </th>
+    <td mat-cell *matCellDef="let element"> {{element?.localIp}} </td>
+  </ng-container>
+  <ng-container matColumnDef="externalIp">
+    <th mat-header-cell *matHeaderCellDef> External IP </th>
+    <td mat-cell *matCellDef="let element"> {{element?.externalIp}} </td>
+  </ng-container>
+  <ng-container matColumnDef="processorIdentifier">
+    <th mat-header-cell *matHeaderCellDef> Processor Identifier </th>
+    <td mat-cell *matCellDef="let element"> {{element?.processorIdentifier}} </td>
+  </ng-container>
+  <ng-container matColumnDef="osversion">
+    <th mat-header-cell *matHeaderCellDef> OS Version </th>
+    <td mat-cell *matCellDef="let element"> {{element?.osversion}} </td>
+  </ng-container>
+  <ng-container matColumnDef="lastActivicty">
+    <th mat-header-cell *matHeaderCellDef> Last Activicty </th>
+    <td mat-cell *matCellDef="let element"> {{element?.lastActivicty}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-table-blue"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="GetDetails(row)" class="table-row tb-border"></tr>
+</table>
