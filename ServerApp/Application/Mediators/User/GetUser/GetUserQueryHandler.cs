@@ -1,5 +1,5 @@
 ﻿using Barsa.Abstracts;
-using Barsa.Commoms;
+using Barsa.Commons;
 using Barsa.Models.Enums;
 using Barsa.Models.Errors;
 using MediatR;
@@ -8,7 +8,7 @@ using Tartaro.Data;
 
 namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
 {
-    public class GetUserQueryHandler : Pagination<Data.Entities.User>, IRequestHandler<GetUserQuery, CommomResponse<List<Data.Entities.User>>>
+    public class GetUserQueryHandler : Pagination<Data.Entities.User>, IRequestHandler<GetUserQuery, CommonResponse<List<Data.Entities.User>>>
     {
         private readonly ApplicationDbContext _dbContext;
         public GetUserQueryHandler(ApplicationDbContext dbContext)
@@ -16,9 +16,9 @@ namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
             _dbContext = dbContext;
         }
 
-        public async Task<CommomResponse<List<Data.Entities.User>>> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<CommonResponse<List<Data.Entities.User>>> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var response = new CommomResponse<List<Data.Entities.User>>();
+            var response = new CommonResponse<List<Data.Entities.User>>();
 
             try
             {
@@ -34,7 +34,7 @@ namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
             }
             catch (Exception ex)
             {
-                response.AddErrors(new MediatorErrors(ErrorType.Unspecified, ex?.InnerException?.Message ?? ex?.Message, new List<Exception>() { ex }));
+                response.AddErrors(new Errors(ErrorType.Unspecified, ex?.InnerException?.Message ?? ex?.Message, new List<Exception>() { ex }));
             }
 
             return response;

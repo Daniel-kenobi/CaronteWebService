@@ -1,4 +1,4 @@
-﻿using Barsa.Models.JWTAppSettingsModel;
+﻿using Barsa.Models.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;

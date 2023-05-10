@@ -1,4 +1,4 @@
-﻿using Barsa.Models.ClientInformation;
+﻿using Barsa.Models.Client;
 using Barsa.Models.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

@@ -1,10 +1,10 @@
-﻿using Barsa.Commoms;
-using Barsa.Models.ClientInformation;
+﻿using Barsa.Commons;
+using Barsa.Models.Client;
 using MediatR;
 
 namespace Tartaro.ServerApp.Application.Mediators.Client.Validate
 {
-    public class ValidateClientCommand : IRequest<CommomResponse>
+    public class ValidateClientCommand : IRequest<CommonResponse>
     {
         public ClientModel ClientInformation { get; set; } = null!;
     }

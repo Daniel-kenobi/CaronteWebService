@@ -1,4 +1,4 @@
-﻿using Barsa.Models.JWTAppSettingsModel;
+﻿using Barsa.Models.JWT;
 
 namespace Tartaro.Configurations.Authentication
 {

@@ -1,5 +1,5 @@
 ﻿using Barsa.Models.User;
-using Barsa.Models.JWTAppSettingsModel;
+using Barsa.Models.JWT;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

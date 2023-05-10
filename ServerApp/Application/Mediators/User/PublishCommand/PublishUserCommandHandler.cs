@@ -1,18 +1,18 @@
-﻿using Barsa.Commoms;
+﻿using Barsa.Commons;
 using MediatR;
 
 namespace Tartaro.ServerApp.Application.Mediators.User.PublishCommand
 {
-    public class PublishUserCommandHandler : IRequestHandler<PublishUserCommand, CommomResponse>
+    public class PublishUserCommandHandler : IRequestHandler<PublishUserCommand, CommonResponse>
     {
         public PublishUserCommandHandler()
         {
 
         }
 
-        public Task<CommomResponse> Handle(PublishUserCommand request, CancellationToken cancellationToken)
+        public Task<CommonResponse> Handle(PublishUserCommand request, CancellationToken cancellationToken)
         {
-            var commomResponse = new CommomResponse();
+            var commomResponse = new CommonResponse();
 
             try
             {

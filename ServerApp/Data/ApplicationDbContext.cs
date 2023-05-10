@@ -7,14 +7,14 @@ namespace Tartaro.Data;
 
 public partial class ApplicationDbContext : DbContext
 {
-    private readonly IOptions<ConnectionString> _connectionString;
+    private readonly IOptions<Database> _connectionString;
 
-    public ApplicationDbContext(IOptions<ConnectionString> connectionString)
+    public ApplicationDbContext(IOptions<Database> connectionString)
     {
         _connectionString = connectionString;
     }
 
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptions<ConnectionString> connectionString)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptions<Database> connectionString)
         : base(options)
     {
         _connectionString = connectionString;
@@ -49,6 +49,7 @@ public partial class ApplicationDbContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("OSVersion");
             entity.Property(e => e.ProcessorIdentifier).HasMaxLength(255);
+            entity.Property(e => e.TimeZone).HasMaxLength(255);
         });
 
         modelBuilder.Entity<Clientfile>(entity =>

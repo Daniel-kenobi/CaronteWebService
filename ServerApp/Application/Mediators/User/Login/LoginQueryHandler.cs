@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Barsa.Commoms;
+using Barsa.Commons;
 using Barsa.Models.User;
-using Barsa.Models.JWTAppSettingsModel;
+using Barsa.Models.JWT;
 using Barsa.Models.User;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +11,7 @@ using Tartaro.Configurations.Authentication;
 
 namespace Tartaro.ServerApp.Application.Mediators.User.Login
 {
-    public class LoginQueryHandler : HandleJWT, IRequestHandler<LoginQuery, CommomResponse<string>>
+    public class LoginQueryHandler : HandleJWT, IRequestHandler<LoginQuery, CommonResponse<string>>
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
@@ -21,9 +21,9 @@ namespace Tartaro.ServerApp.Application.Mediators.User.Login
             _mapper = mapper;
         }
 
-        public async Task<CommomResponse<string>> Handle(LoginQuery request, CancellationToken cancellationToken)
+        public async Task<CommonResponse<string>> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
-            var response = new CommomResponse<string>();
+            var response = new CommonResponse<string>();
 
             try
             {

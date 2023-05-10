@@ -19,5 +19,7 @@ public partial class Client
 
     public DateTime? LastActivicty { get; set; }
 
+    public string? TimeZone { get; set; } = null!;
+
     public virtual ICollection<Clientfile> Clientfiles { get; set; } = new List<Clientfile>();
 }

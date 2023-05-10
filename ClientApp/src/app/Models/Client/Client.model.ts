@@ -6,4 +6,5 @@ export interface ClientModel {
   processorIdentifier: string;
   osversion: string;
   lastActivicty: Date;
+  timeZone: string;
 }

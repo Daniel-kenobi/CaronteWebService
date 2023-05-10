@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using Barsa.Commoms;
-using Barsa.Models.ClientInformation;
+using Barsa.Commons;
+using Barsa.Models.Client;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Tartaro.Data;
 
 namespace Tartaro.ServerApp.Application.Mediators.Client.Validate
 {
-    public class ValidateClientCommandHandler : IRequestHandler<ValidateClientCommand, CommomResponse>
+    public class ValidateClientCommandHandler : IRequestHandler<ValidateClientCommand, CommonResponse>
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IMapper _mapper;
@@ -18,9 +18,9 @@ namespace Tartaro.ServerApp.Application.Mediators.Client.Validate
         }
 
 
-        public async Task<CommomResponse> Handle(ValidateClientCommand request, CancellationToken cancellationToken)
+        public async Task<CommonResponse> Handle(ValidateClientCommand request, CancellationToken cancellationToken)
         {
-            var response = new CommomResponse();
+            var response = new CommonResponse();
             var client = request.ClientInformation;
 
             var transaction = await _dbContext.Database.BeginTransactionAsync();
