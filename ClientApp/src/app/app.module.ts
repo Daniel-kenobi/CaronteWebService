@@ -6,13 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Navbar/Navbar.component';
-import { UserModule } from './Client/Client.module.';
-import { ClientComponent } from './Client/Client.component'
+import { ClientModule } from './Client/Client.module';
+import { ClientComponent } from './Client/Client.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: '', component: ClientComponent }, 
-  { path: 'client', component: ClientComponent }, 
-];
 
 @NgModule({
   declarations: [
@@ -21,11 +18,12 @@ const appRoutes: Routes = [
     NavbarComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    AppRoutingModule,
+    BrowserModule,
     HttpClientModule,
     FormsModule,
-    UserModule,
-    RouterModule.forRoot(appRoutes)
+    ClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
