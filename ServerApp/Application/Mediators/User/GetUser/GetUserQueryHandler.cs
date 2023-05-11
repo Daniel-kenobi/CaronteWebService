@@ -1,6 +1,5 @@
 ﻿using Barsa.Abstracts;
 using Barsa.Commons;
-using Barsa.Models.Enums;
 using Barsa.Models.Errors;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

@@ -1,7 +1,7 @@
 ﻿using Barsa.Commons;
 using MediatR;
 
-namespace Tartaro.ServerApp.Application.Mediators.User.PublishCommand
+namespace Tartaro.ServerApp.Application.Mediators.Client.PublishCommand
 {
     public class PublishUserCommandHandler : IRequestHandler<PublishUserCommand, CommonResponse>
     {

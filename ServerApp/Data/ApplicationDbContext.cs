@@ -79,7 +79,9 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.LastActivicty)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("datetime");
+
             entity.Property(e => e.Username).HasMaxLength(255);
+            entity.Property(e => e.Password).HasMaxLength(120);
         });
 
         OnModelCreatingPartial(modelBuilder);

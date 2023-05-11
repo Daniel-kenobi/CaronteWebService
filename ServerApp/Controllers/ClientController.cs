@@ -1,10 +1,9 @@
 ﻿using Barsa.Models.Client;
-using Barsa.Models.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Tartaro.ServerApp.Application.Mediators.Client.GetUser;
+using Tartaro.ServerApp.Application.Mediators.Client.GetClient;
+using Tartaro.ServerApp.Application.Mediators.Client.PublishCommand;
 using Tartaro.ServerApp.Application.Mediators.Client.Validate;
-using Tartaro.ServerApp.Application.Mediators.User.PublishCommand;
 
 namespace Tartaro.Controllers
 {
@@ -18,9 +17,8 @@ namespace Tartaro.Controllers
             _mediator = mediator;
         }
 
-
         [HttpPost("SendCommand")]
-        public async Task<IActionResult> SendCommand([FromBody] UserCommand userCommand)
+        public async Task<IActionResult> SendCommand([FromBody] ClientCommand userCommand)
         {
             var response = await _mediator.Send(new PublishUserCommand() { UserCommand = userCommand });
 

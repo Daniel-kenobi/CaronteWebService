@@ -23,4 +23,8 @@ export class BackendUrl {
   GetUser(): string {
     return `${this.baseUrl}client/GetUser`;
   }
+
+  Login(): string {
+    return `${this.baseUrl}client/Login`;
+  }
 }

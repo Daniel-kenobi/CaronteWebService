@@ -1,4 +1,4 @@
-﻿using Barsa.Models.User;
+﻿using Barsa.Models.Client;
 using Barsa.Models.JWT;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -21,11 +21,9 @@ namespace Tartaro.Configurations.Authentication
             var issuer = _jwtModel.Value.Issuer;
             var audience = _jwtModel.Value.Audience;
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtModel.Value.Key));
-
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var claims = GenerateUserClaims(user);
-            var token = new JwtSecurityToken(issuer: issuer, audience: audience, expires: DateTime.Now.AddMinutes(120), signingCredentials: credentials, claims: claims);
+            var token = new JwtSecurityToken(issuer: issuer, audience: audience, expires: DateTime.Now.AddMinutes(120), signingCredentials: credentials, claims: GenerateUserClaims(user));
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var stringToken = tokenHandler.WriteToken(token);
@@ -38,7 +36,6 @@ namespace Tartaro.Configurations.Authentication
             return new List<Claim>()
             {
                 new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Version, user.OSVersion)
             };
         }
     }

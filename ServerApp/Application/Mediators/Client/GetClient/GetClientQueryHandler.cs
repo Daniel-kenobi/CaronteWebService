@@ -2,13 +2,12 @@
 using Barsa.Abstracts;
 using Barsa.Commons;
 using Barsa.Models.Client;
-using Barsa.Models.Enums;
 using Barsa.Models.Errors;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Tartaro.Data;
 
-namespace Tartaro.ServerApp.Application.Mediators.Client.GetUser
+namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
 {
     public class GetClientQueryHandler : Pagination<Data.Entities.Client> ,IRequestHandler<GetClientQuery, CommonResponse<List<ClientModel>>>
     {

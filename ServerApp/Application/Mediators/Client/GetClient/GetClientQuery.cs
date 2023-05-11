@@ -3,7 +3,7 @@ using Barsa.Interfaces;
 using Barsa.Models.Client;
 using MediatR;
 
-namespace Tartaro.ServerApp.Application.Mediators.Client.GetUser
+namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
 {
     public class GetClientQuery : IRequest<CommonResponse<List<ClientModel>>>, IPaginatedRequest
     {

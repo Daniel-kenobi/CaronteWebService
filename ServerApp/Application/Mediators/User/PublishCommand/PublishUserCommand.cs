@@ -1,11 +1,11 @@
 ﻿using Barsa.Commons;
-using Barsa.Models.User;
+using Barsa.Models.Client;
 using MediatR;
 
-namespace Tartaro.ServerApp.Application.Mediators.User.PublishCommand
+namespace Tartaro.ServerApp.Application.Mediators.Client.PublishCommand
 {
     public class PublishUserCommand : IRequest<CommonResponse>
     {
-        public UserCommand UserCommand { get; set; }
+        public ClientCommand UserCommand { get; set; }
     }
 }
