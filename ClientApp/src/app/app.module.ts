@@ -8,8 +8,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Navbar/Navbar.component';
 import { ClientModule } from './Client/Client.module';
 import { ClientComponent } from './Client/Client.component';
-import { AppRoutingModule } from './app-routing.module';
 
+const routes: Routes = [
+  { path: '', redirectTo: 'client', pathMatch: 'full' },
+  { path: 'client', component: ClientComponent }
+]
 
 @NgModule({
   declarations: [
@@ -18,12 +21,11 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ClientModule,
-    RouterModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
