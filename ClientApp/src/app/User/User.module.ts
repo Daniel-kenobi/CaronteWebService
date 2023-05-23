@@ -19,7 +19,6 @@ import { UserComponent } from "./User.component";
     MatTableModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
   ]
 })
 export class UserModule {
