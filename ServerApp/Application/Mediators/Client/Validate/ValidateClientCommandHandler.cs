@@ -41,9 +41,9 @@ namespace Tartaro.ServerApp.Application.Mediators.Client.Validate
 
                 await transaction.CommitAsync();
             }
-            catch (Exception ex)
+            catch
             {
-                await transaction.RollbackAsync();
+                await transaction.RollbackAsync(cancellationToken);
             }
 
             return response;
