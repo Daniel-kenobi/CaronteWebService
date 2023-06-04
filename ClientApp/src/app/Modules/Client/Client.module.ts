@@ -2,12 +2,12 @@ import { NgModule } from "@angular/core";
 import { MatDialogModule } from "@angular/material/dialog";
 
 import { MatTableModule } from '@angular/material/table';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ClientDetailComponent } from "./Detail/ClientDetail.component";
 import { ClientService } from "../../Services/Client/Client.service";
 import { ClientComponent } from "./Client.component";
 import { ClientRoutingModule } from "./Client-routing.module";
 import { CommonModule } from "@angular/common";
+import { CustomSpinnerModule } from "../../CommonComponents/CustomSpinner/custom-spinner.module";
 
 @NgModule({
   declarations: [
@@ -18,8 +18,8 @@ import { CommonModule } from "@angular/common";
     CommonModule,
     MatTableModule,
     MatDialogModule,
-    MatProgressSpinnerModule,
     ClientRoutingModule,
+    CustomSpinnerModule
   ],
   providers: [
     ClientService

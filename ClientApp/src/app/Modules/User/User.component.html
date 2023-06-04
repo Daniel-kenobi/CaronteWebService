@@ -1,6 +1,5 @@
 <h2 class="text-center text-white">Users - Panel users (attackers)</h2>
-
-<mat-spinner *ngIf="users.length == 0"></mat-spinner>
+<custom-spinner [spin]="Spin()"></custom-spinner>
 <table mat-table [dataSource]="users" class="bg-cream" *ngIf="users.length > 0">
   <ng-container matColumnDef="clientId">
     <th mat-header-cell *matHeaderCellDef> Client ID </th>
