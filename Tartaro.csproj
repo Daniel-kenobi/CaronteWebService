@@ -43,6 +43,7 @@
     <Folder Include="ClientApp\src\app\Models\NavbarLinks\" />
     <Folder Include="ClientApp\src\app\Models\Enum\" />
     <Folder Include="ClientApp\src\app\Models\User\" />
+    <Folder Include="ClientApp\src\app\CommonComponents\Spinner\" />
     <Folder Include="ClientApp\src\app\Services\User\" />
   </ItemGroup>
 

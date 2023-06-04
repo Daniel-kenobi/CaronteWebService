@@ -2,33 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './Navbar/Navbar.component';
-import { ClientModule } from './Client/Client.module';
-import { ClientComponent } from './Client/Client.component';
+import { NavbarComponent } from './CommonComponents/Navbar/Navbar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-const routes: Routes = [
-  { path: '', redirectTo: 'client', pathMatch: 'full' },
-  { path: 'client', component: ClientComponent }
-]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
-    ClientModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [
-
+    AppRoutingModule,
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   bootstrap: [
     AppComponent
