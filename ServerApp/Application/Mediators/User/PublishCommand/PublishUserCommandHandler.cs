@@ -18,7 +18,7 @@ namespace Tartaro.ServerApp.Application.Mediators.Client.PublishCommand
             {
 
             }
-            catch (Exception ex)
+            catch
             {
 
             }

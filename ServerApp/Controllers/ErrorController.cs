@@ -15,8 +15,7 @@ namespace Tartaro.Controllers
 
         public async Task<IActionResult> ReportError([FromBody] Exception exception)
         {
-            var response = _mediator.Send(new object());
-
+            var response = await _mediator.Send(new object());
             return Ok();
         }
     }

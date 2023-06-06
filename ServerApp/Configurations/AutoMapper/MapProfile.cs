@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Barsa.Models.Client;
-using Barsa.Models.Client;
 using Tartaro.ServerApp.Data.Entities;
 
 namespace Tartaro.Configurations.AutoMapper

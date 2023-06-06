@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Barsa.Abstracts;
 using Barsa.Commons;
 using Barsa.Models.Client;
 using Barsa.Models.Errors;
+using Barsa.Modules.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Tartaro.Data;
