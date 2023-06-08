@@ -8,3 +8,9 @@
 .forms {
     width: 28em;
 }
+
+.btn {
+    padding-left: 45px;
+    padding-right: 45px;
+    font-weight: bold;
+}

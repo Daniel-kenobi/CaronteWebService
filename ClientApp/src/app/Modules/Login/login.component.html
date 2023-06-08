@@ -1,19 +1,27 @@
-<div class="d-flex justify-content-around">
+<div class="d-flex justify-content-around pt-3 pb-3">
   <div class="col-md-7 border border-dark login-image">
 
   </div>
-  <div class="col-md-4 border border-dark px-3">
+  <div class="col-md-4 border border-ligth px-3 pt-4">
     <h2 class="text-center text-light">Enter now!</h2>
     <form>
       <div class="d-block">
-        <label for="email" class="d-block text-center text-light">E-mail</label>
-        <input type="text" id="email" class="forms" />
+        <label for="email" class="text-center text-light">E-mail</label>
+        <input type="text" id="email" class="forms"  [value]="email" (input)="email = usernameEvent.value" #usernameEvent/>
       </div>
       <div class="d-block">
-        <label for="password" class="d-block text-center text-light">Password</label>
-        <input type="password" id="password" class="forms" />
+        <label for="password" class="text-center text-light">Password</label>
+        <input type="password" id="password" class="forms"  [value]="password" (input)="password = passwordEvent.value" #passwordEvent/>
       </div>
-      <button type="button" class="btn btn-light mt-5">Enter</button>
+      <div class="d-block">
+        <a href="#" class="links">Forgot your password ?</a>
+      </div>
+      <div class="d-block px-0 mx-0">
+        <p class="text-center text-danger" *ngIf="wrongCredentials">Wrong credentials. Try again!</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-light mt-2" (click)="Enter()">Enter</button>
+      </div>
     </form>
   </div>
 </div>

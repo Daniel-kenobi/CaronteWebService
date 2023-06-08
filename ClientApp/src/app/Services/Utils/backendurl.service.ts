@@ -25,6 +25,6 @@ export class BackendUrl {
   }
 
   Login(): string {
-    return `${this.baseUrl}client/Login`;
+    return `${this.baseUrl}User/Login`;
   }
 }

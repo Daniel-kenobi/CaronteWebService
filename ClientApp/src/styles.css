@@ -22,4 +22,7 @@ h2 {
   background-color: rgb(235, 235, 235);
 }
 
+.links, .links:hover {
+  color: rgb(255, 255, 255);
+}
 

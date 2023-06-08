@@ -24,7 +24,7 @@ namespace Tartaro.Controllers
             if (response.IsSucessFull)
                 return Ok(response.ResponseObject);
 
-            return BadRequest(response.Errors);
+            return NotFound(response.Errors);
         }
 
         [HttpPost("GetUsers")]
@@ -37,7 +37,5 @@ namespace Tartaro.Controllers
 
             return BadRequest(response.Errors);
         }
-
-        
     }
 }
