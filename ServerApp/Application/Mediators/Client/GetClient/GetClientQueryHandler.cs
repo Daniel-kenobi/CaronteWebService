@@ -25,7 +25,7 @@ namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
 
             try
             {
-                var query = AddPagination(_context.Clients.AsQueryable<Data.Entities.Client>(), request);
+                var query = AddPaginationToQuery(_context.Clients.AsQueryable<Data.Entities.Client>(), request);
                 response.ResponseObject = _mapper.Map<List<ClientModel>>(await query.ToListAsync(cancellationToken: cancellationToken));
             }
             catch (Exception ex)
