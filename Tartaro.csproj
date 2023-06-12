@@ -44,6 +44,8 @@
     <Folder Include="ClientApp\src\app\Models\Enum\" />
     <Folder Include="ClientApp\src\app\Models\User\" />
     <Folder Include="ClientApp\src\app\Services\User\" />
+    <Folder Include="ServerApp\Domain\" />
+    <Folder Include="ServerApp\Infraestructure\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
