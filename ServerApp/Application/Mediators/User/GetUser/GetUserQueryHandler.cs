@@ -27,7 +27,7 @@ namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
                     query = query.Where(x => x.UserId == request.UserId);
 
                 if (IsPaginatedRequest(request))
-                    query = AddPaginationToQuery(query, request);
+                    query = Paginate(query, request);
 
                 response.ResponseObject = await query.ToListAsync(cancellationToken: cancellationToken);
             }

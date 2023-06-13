@@ -1,6 +1,6 @@
 ﻿using Barsa.Commons;
 using Barsa.Models.Client;
-using Barsa.Modules.Interfaces;
+using Barsa.Modules.Data;
 using MediatR;
 
 namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
