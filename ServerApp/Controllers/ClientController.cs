@@ -1,9 +1,8 @@
 ﻿using Barsa.Models.Client;
+using Caronte.Modules.ValidateClient;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tartaro.ServerApp.Application.Mediators.Client.GetClient;
-using Tartaro.ServerApp.Application.Mediators.Client.PublishCommand;
-using Tartaro.ServerApp.Application.Mediators.Client.Validate;
 
 namespace Tartaro.Controllers
 {

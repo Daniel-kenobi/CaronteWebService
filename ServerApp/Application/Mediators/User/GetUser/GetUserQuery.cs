@@ -1,5 +1,5 @@
 ﻿using Barsa.Commons;
-using Barsa.Modules.Interfaces;
+using Barsa.Modules.Data;
 using MediatR;
 
 namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
