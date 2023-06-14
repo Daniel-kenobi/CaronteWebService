@@ -3,20 +3,22 @@ using Barsa.Commons;
 using Barsa.Models.Client;
 using Barsa.Models.Errors;
 using Barsa.Modules.Data;
+using Caronte.Infra.Repository;
+using Caronte.Infra.Repository.Database.Interfaces;
+using ClientEntity =  Caronte.Infra.Repository.Database.Entities.Client;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Tartaro.Data;
+using Caronte.Infra.Mapping;
 
 namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
 {
-    public class GetClientQueryHandler : Pagination<Data.Entities.Client>, IRequestHandler<GetClientQuery, CommonResponse<List<ClientModel>>>
+    public class GetClientQueryHandler : Pagination<ClientEntity>, IRequestHandler<GetClientQuery, CommonResponse<List<ClientModel>>>
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IMapper _mapper;
-        public GetClientQueryHandler(ApplicationDbContext context, IMapper mapper)
+        private readonly IRepository<ClientEntity> _clientRepository;
+        private readonly IDefaultMapper _defaultMapper;
+        public GetClientQueryHandler(IRepository<ClientEntity> clientRepository, IDefaultMapper defaultMapper)
         {
-            _context = context;
-            _mapper = mapper;
+            _clientRepository = clientRepository;
+            _defaultMapper = defaultMapper;
         }
 
         public async Task<CommonResponse<List<ClientModel>>> Handle(GetClientQuery request, CancellationToken cancellationToken)
@@ -25,8 +27,8 @@ namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
 
             try
             {
-                var query = Paginate(_context.Clients.AsQueryable<Data.Entities.Client>(), request);
-                response.ResponseObject = _mapper.Map<List<ClientModel>>(await query.ToListAsync(cancellationToken: cancellationToken));
+                var allClients = await _clientRepository.GetAll(request);
+                var clientModels = _defaultMapper.Map<List<ClientModel>>(allClients);
             }
             catch (Exception ex)
             {

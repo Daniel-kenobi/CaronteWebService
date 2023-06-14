@@ -2,7 +2,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tartaro.ServerApp.Application.Mediators.User.GetUser;
-using Tartaro.ServerApp.Application.Mediators.User.Login;
 
 namespace Tartaro.Controllers
 {

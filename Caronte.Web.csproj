@@ -11,8 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
@@ -36,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Caronte.Infra\Caronte.Infra\Caronte.Infra.csproj" />
     <ProjectReference Include="..\..\CaronteLib\CaronteLib\Barsa.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,4 @@
 ﻿using Barsa.Models.Client;
-using Caronte.Modules.ValidateClient;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tartaro.ServerApp.Application.Mediators.Client.GetClient;
@@ -16,7 +15,7 @@ namespace Tartaro.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("SendCommand")]
+        /*[HttpPost("SendCommand")]
         public async Task<IActionResult> SendCommand([FromBody] ClientCommand userCommand)
         {
             var response = await _mediator.Send(new PublishUserCommand() { UserCommand = userCommand });
@@ -36,7 +35,7 @@ namespace Tartaro.Controllers
                 return NoContent();
 
             return BadRequest(response.Errors);
-        }
+        }*/
 
         [HttpPost("GetClient")]
         public async Task<IActionResult> GetClient([FromBody] GetClientQuery getClientQuery)
