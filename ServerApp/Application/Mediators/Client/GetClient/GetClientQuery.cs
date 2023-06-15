@@ -1,5 +1,5 @@
-﻿using Barsa.Commons;
-using Barsa.Models.Client;
+﻿using Caronte.Commons.Commons;
+using Caronte.Commons.Models.Client;
 using Caronte.Infra.Repository.Database.Interfaces;
 using MediatR;
 

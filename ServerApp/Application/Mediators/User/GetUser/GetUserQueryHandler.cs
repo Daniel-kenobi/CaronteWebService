@@ -2,7 +2,6 @@
 using Barsa.Models.Errors;
 using Caronte.Infra.Repository;
 using MediatR;
-using Tartaro.Data;
 using UserEntity = Caronte.Infra.Repository.Database.Entities.User;
 
 namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
@@ -25,7 +24,7 @@ namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
             }
             catch (Exception ex)
             {
-                response.AddErrors(new Errors(ErrorType.Unspecified, ex?.InnerException?.Message ?? ex.Message, new List<Exception>() { ex }));
+                response.AddErrors(new Error(ErrorType.Unspecified, ex?.InnerException?.Message ?? ex.Message, new List<Exception>() { ex }));
             }
 
             return response;

@@ -1,13 +1,11 @@
-﻿using AutoMapper;
-using Barsa.Commons;
-using Barsa.Models.Client;
-using Barsa.Models.Errors;
-using Barsa.Modules.Data;
-using Caronte.Infra.Repository;
-using Caronte.Infra.Repository.Database.Interfaces;
-using ClientEntity =  Caronte.Infra.Repository.Database.Entities.Client;
-using MediatR;
+﻿using Barsa.Modules.Data;
+using Caronte.Commons.Commons;
+using Caronte.Commons.Models.Client;
+using Caronte.Commons.Models.Errors;
 using Caronte.Infra.Mapping;
+using Caronte.Infra.Repository;
+using MediatR;
+using ClientEntity = Caronte.Infra.Repository.Database.Entities.Client;
 
 namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
 {
@@ -32,7 +30,7 @@ namespace Tartaro.ServerApp.Application.Mediators.Client.GetClient
             }
             catch (Exception ex)
             {
-                response.AddErrors(new Errors(ErrorType.BadRequest, ex?.InnerException?.Message ?? ex.Message, new List<Exception>() { ex }));
+                response.AddErrors(new Error(ErrorType.BadRequest, ex?.InnerException?.Message ?? ex.Message, new List<Exception>() { ex }));
             }
 
             return response;

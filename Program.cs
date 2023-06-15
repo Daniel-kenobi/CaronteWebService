@@ -9,7 +9,6 @@ internal partial class Program
         var builder = WebApplication.CreateBuilder(args);
 
         Authentication.AddJWTAuthentication(builder);
-        AppSettings.BindAppSettingsToModel(builder);
         ConnectionString.BindConnectionStringToModel(builder);
         Database.ConfigureDbContext(builder);
 

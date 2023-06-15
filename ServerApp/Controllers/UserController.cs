@@ -1,4 +1,4 @@
-﻿using Barsa.Models.Client;
+﻿using Caronte.Commons.Models.Client;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tartaro.ServerApp.Application.Mediators.User.GetUser;
