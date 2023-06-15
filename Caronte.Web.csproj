@@ -35,7 +35,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Caronte.Infra\Caronte.Infra\Caronte.Infra.csproj" />
-    <ProjectReference Include="..\..\CaronteLib\CaronteLib\Barsa.csproj" />
+    <ProjectReference Include="..\..\CaronteLib\CaronteLib\Caronte.Commons.csproj" />
   </ItemGroup>
 
   <ItemGroup>

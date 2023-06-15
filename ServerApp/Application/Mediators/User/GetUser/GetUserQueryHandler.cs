@@ -1,39 +1,31 @@
 ﻿using Barsa.Commons;
 using Barsa.Models.Errors;
-using Barsa.Modules.Data;
+using Caronte.Infra.Repository;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Tartaro.Data;
+using UserEntity = Caronte.Infra.Repository.Database.Entities.User;
 
 namespace Tartaro.ServerApp.Application.Mediators.User.GetUser
 {
-    public class GetUserQueryHandler : Pagination<Data.Entities.User>, IRequestHandler<GetUserQuery, CommonResponse<List<Data.Entities.User>>>
+    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, CommonResponse<List<UserEntity>>>
     {
-        private readonly ApplicationDbContext _dbContext;
-        public GetUserQueryHandler(ApplicationDbContext dbContext)
+        private readonly IRepository<UserEntity> _repository;
+        public GetUserQueryHandler(IRepository<UserEntity> repository)
         {
-            _dbContext = dbContext;
+            _repository = repository;
         }
 
-        public async Task<CommonResponse<List<Data.Entities.User>>> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<CommonResponse<List<UserEntity>>> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var response = new CommonResponse<List<Data.Entities.User>>();
+            var response = new CommonResponse<List<UserEntity>>();
 
             try
             {
-                IQueryable<Data.Entities.User> query = _dbContext.Users;
-
-                if ((request?.UserId ?? 0) > 0)
-                    query = query.Where(x => x.UserId == request.UserId);
-
-                if (IsPaginatedRequest(request))
-                    query = AddPagination(query, request);
-
-                response.ResponseObject = await query.ToListAsync(cancellationToken: cancellationToken);
+                response.ResponseObject = (await _repository.GetAll(request)).ToList();
             }
             catch (Exception ex)
             {
-                response.AddErrors(new Errors(ErrorType.Unspecified, ex?.InnerException?.Message ?? ex?.Message, new List<Exception>() { ex }));
+                response.AddErrors(new Errors(ErrorType.Unspecified, ex?.InnerException?.Message ?? ex.Message, new List<Exception>() { ex }));
             }
 
             return response;
