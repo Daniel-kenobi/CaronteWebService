@@ -1,7 +1,6 @@
-﻿using Barsa.Models.Client;
-using MediatR;
+﻿using Caronte.Commons.Modules.Querys;
+using Caronte.Domain.Client;
 using Microsoft.AspNetCore.Mvc;
-using Tartaro.ServerApp.Application.Mediators.Client.GetClient;
 
 namespace Tartaro.Controllers
 {
@@ -9,43 +8,16 @@ namespace Tartaro.Controllers
     [Route("[controller]")]
     public class ClientController : Controller
     {
-        private readonly IMediator _mediator;
-        public ClientController(IMediator mediator)
+        private readonly IClientService _clientService;
+        public ClientController(IClientService clientService)
         {
-            _mediator = mediator;
+            _clientService = clientService;
         }
-
-        /*[HttpPost("SendCommand")]
-        public async Task<IActionResult> SendCommand([FromBody] ClientCommand userCommand)
-        {
-            var response = await _mediator.Send(new PublishUserCommand() { UserCommand = userCommand });
-
-            if (response.IsSucessFull)
-                return NoContent();
-
-            return BadRequest(response.Errors);
-        }
-
-        [HttpPost("Validate")]
-        public async Task<IActionResult> Validate([FromBody] ClientModel clientInformation)
-        {
-            var response = await _mediator.Send(new ValidateClientCommand() { ClientInformation = clientInformation });
-
-            if (response.IsSucessFull)
-                return NoContent();
-
-            return BadRequest(response.Errors);
-        }*/
 
         [HttpPost("GetClient")]
         public async Task<IActionResult> GetClient([FromBody] GetClientQuery getClientQuery)
         {
-            var response = await _mediator.Send(getClientQuery);
-
-            if (response.IsSucessFull)
-                return Ok(response.ResponseObject);
-
-            return BadRequest(response.Errors);
+           return Ok(_clientService.GetClient(getClientQuery));
         }
     }
 }

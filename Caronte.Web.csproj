@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Caronte.Application\Caronte.Application\Caronte.Application.csproj" />
+    <ProjectReference Include="..\..\Caronte.DependencyInjection\Caronte.DependencyInjection\Caronte.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\Caronte.Domain\Caronte.Domain\Caronte.Domain.csproj" />
     <ProjectReference Include="..\..\Caronte.Infra\Caronte.Infra\Caronte.Infra.csproj" />
     <ProjectReference Include="..\..\CaronteLib\CaronteLib\Caronte.Commons.csproj" />
   </ItemGroup>

@@ -1,3 +1,4 @@
+using Caronte.DependencyInjection.Client;
 using MediatR;
 using Tartaro.Configurations.Authentication;
 using Tartaro.Configurations.Data;
