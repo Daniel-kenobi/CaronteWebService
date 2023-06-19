@@ -1,5 +1,5 @@
-﻿using Caronte.Commons.Modules.Querys;
-using Caronte.Domain.Client;
+﻿using Caronte.Domain.Modules.Querys;
+using Caronte.Domain.Services.Client;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Tartaro.Controllers

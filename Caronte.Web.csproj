@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="7.0.4" />
@@ -31,7 +31,6 @@
     <ProjectReference Include="..\..\Caronte.DependencyInjection\Caronte.DependencyInjection\Caronte.DependencyInjection.csproj" />
     <ProjectReference Include="..\..\Caronte.Domain\Caronte.Domain\Caronte.Domain.csproj" />
     <ProjectReference Include="..\..\Caronte.Infra\Caronte.Infra\Caronte.Infra.csproj" />
-    <ProjectReference Include="..\..\CaronteLib\CaronteLib\Caronte.Commons.csproj" />
   </ItemGroup>
 
   <ItemGroup>
