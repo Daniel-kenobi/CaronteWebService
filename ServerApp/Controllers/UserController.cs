@@ -1,7 +1,7 @@
 ﻿using Caronte.Commons.Models.Client;
+using Caronte.Commons.Modules.Querys;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Tartaro.ServerApp.Application.Mediators.User.GetUser;
 
 namespace Tartaro.Controllers
 {

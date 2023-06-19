@@ -1,6 +1,6 @@
 using Caronte.DependencyInjection.Client;
+using Caronte.Infra.Authentication;
 using MediatR;
-using Tartaro.Configurations.Authentication;
 using Tartaro.Configurations.Data;
 
 internal partial class Program
