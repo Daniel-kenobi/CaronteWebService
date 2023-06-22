@@ -1,5 +1,4 @@
-using Caronte.DependencyInjection.Client;
-using Caronte.Infra.Authentication;
+using Caronte.DependencyInjection.Auth;
 using MediatR;
 using Tartaro.Configurations.Data;
 
@@ -9,7 +8,7 @@ internal partial class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        Authentication.AddJWTAuthentication(builder);
+        AuthenticationDependencyInjection.Inject(builder);
         ConnectionString.BindConnectionStringToModel(builder);
         Database.ConfigureDbContext(builder);
 

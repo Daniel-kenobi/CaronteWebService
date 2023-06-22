@@ -1,8 +1,9 @@
 ﻿using Caronte.Domain.Modules.Querys;
 using Caronte.Domain.Services.Client;
+using Caronte.Infra.Configs.HttpResponseHandler;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Tartaro.Controllers
+namespace Caronte.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -17,7 +18,7 @@ namespace Tartaro.Controllers
         [HttpPost("GetClient")]
         public async Task<IActionResult> GetClient([FromBody] GetClientQuery getClientQuery)
         {
-           return Ok(_clientService.GetClient(getClientQuery));
+            return Ok(_clientService.GetClient(getClientQuery));
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Tartaro.Controllers
+namespace Caronte.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
